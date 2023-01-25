@@ -5,6 +5,19 @@ We can easily run the whole with only a single command:
 ```bash
 docker-compose up
 ```
+Test api :
+
+curl --location --request POST 'localhost:6868/api/tutorials' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"id": 101,
+"title": "title",
+"description": "some description",
+"published": false
+
+}'
+
+curl --location --request GET 'localhost:6868/api/tutorials'
 
 Docker will pull the MySQL and Spring Boot images (if our machine does not have it before).
 
